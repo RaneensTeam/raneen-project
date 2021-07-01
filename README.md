@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/RaneensTeam/raneen-project/main/demo.png" alt="demo"/></a>
+  <img src="https://raw.githubusercontent.com/RaneensTeam/raneen-project/main/demo.png" alt="demo"/></img>
 </p>
 
 <br/>
