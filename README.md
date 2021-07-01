@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://gittuwaiq.netlify.app/"><img src="https://raw.githubusercontent.com/YounesAlturkey/gittuwaiq/main/files/GitTuwaiq.gif" alt="demo"/></a>
+  <img src="https://raw.githubusercontent.com/RaneensTeam/raneen-project/main/demo.png" alt="demo"/></img>
 </p>
 
 <br/>
