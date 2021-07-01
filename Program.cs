@@ -2,15 +2,16 @@
 using System.IO;
 using System.Text;
 using System.Xml;
-
+using System.Threading;
 namespace raneen_project
 {
     class Program
     {
         static void Main(string[] args)
         {
-            CreateXMLfile();
-            ReadXMLfile();
+            Thread create = new Thread (CreateXMLfile);
+            Thread.Join();
+            Thread create = new Thread(ReadXMLfile);
         }
         static void CreateXMLfile()
         {
