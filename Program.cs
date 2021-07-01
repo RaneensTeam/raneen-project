@@ -24,29 +24,29 @@ namespace raneen_project
             XmlElement root2 = xmldoc.CreateElement("group_membars");
             root.AppendChild(root2);
             XmlElement element3 = xmldoc.CreateElement("membar1");
-            XmlText text3 = xmldoc.CreateTextNode("ranen");
+            XmlText text3 = xmldoc.CreateTextNode("Raneen");
             root2.AppendChild(element3);
             element3.AppendChild(text3);
             XmlElement element4 = xmldoc.CreateElement("membar2");
-            XmlText text4 = xmldoc.CreateTextNode("mohammed");
+            XmlText text4 = xmldoc.CreateTextNode("Mohammad");
             root2.AppendChild(element4);
             element4.AppendChild(text4);
             XmlElement element5 = xmldoc.CreateElement("membar3");
-            XmlText text5 = xmldoc.CreateTextNode("amal");
+            XmlText text5 = xmldoc.CreateTextNode("Amal");
             root2.AppendChild(element5);
             element5.AppendChild(text5);
             XmlElement element6 = xmldoc.CreateElement("membar4");
-            XmlText text6 = xmldoc.CreateTextNode("hussain");
+            XmlText text6 = xmldoc.CreateTextNode("Hussain");
             root2.AppendChild(element6);
             element6.AppendChild(text6);
-            xmldoc.Save(@"/Users/younes/Desktop/team.xml");
+            xmldoc.Save(@"C:\Users\96655\OneDrive\Desktop\file.xml");
             Console.WriteLine("Successfully, generated team.xml.\n");
         }
         static void ReadXMLfile()
         {
             XmlDocument xmldoc = new XmlDocument();
             Console.WriteLine("team.xml contents:");
-            xmldoc.Load(@"/Users/younes/Desktop/team.xml");
+            xmldoc.Load(@"C:\Users\96655\OneDrive\Desktop\file.xml");
             string xmlString = xmldoc.OuterXml;
             Console.WriteLine(PrintXML(xmlString) + "\n");
         }
