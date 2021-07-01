@@ -7,41 +7,48 @@ namespace raneen_project
 {
     class Program
     {
+        private static bool isDone;
+        static object lockDone = new object();
         static void Main(string[] args)
         {
-            Thread create = new Thread (CreateXMLfile);
-            Thread.Join();
-            Thread create = new Thread(ReadXMLfile);
+            Thread create = new Thread(CreateXMLfile);
+            Thread read = new Thread(ReadXMLfile);
+            create.Start();
+            read.Start();
         }
         static void CreateXMLfile()
         {
-            XmlDocument xmldoc = new XmlDocument();
-            XmlElement root = xmldoc.CreateElement("team");
-            xmldoc.AppendChild(root);
-            XmlElement element1 = xmldoc.CreateElement("leader");
-            XmlText text1 = xmldoc.CreateTextNode("younes");
-            root.AppendChild(element1);
-            element1.AppendChild(text1);
-            XmlElement root2 = xmldoc.CreateElement("group_membars");
-            root.AppendChild(root2);
-            XmlElement element3 = xmldoc.CreateElement("membar1");
-            XmlText text3 = xmldoc.CreateTextNode("Raneen");
-            root2.AppendChild(element3);
-            element3.AppendChild(text3);
-            XmlElement element4 = xmldoc.CreateElement("membar2");
-            XmlText text4 = xmldoc.CreateTextNode("Mohammad");
-            root2.AppendChild(element4);
-            element4.AppendChild(text4);
-            XmlElement element5 = xmldoc.CreateElement("membar3");
-            XmlText text5 = xmldoc.CreateTextNode("Amal");
-            root2.AppendChild(element5);
-            element5.AppendChild(text5);
-            XmlElement element6 = xmldoc.CreateElement("membar4");
-            XmlText text6 = xmldoc.CreateTextNode("Hussain");
-            root2.AppendChild(element6);
-            element6.AppendChild(text6);
-            xmldoc.Save(@"C:\Users\96655\OneDrive\Desktop\file.xml");
-            Console.WriteLine("Successfully, generated team.xml.\n");
+            lock (lockDone)
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                XmlElement root = xmldoc.CreateElement("team");
+                xmldoc.AppendChild(root);
+                XmlElement element1 = xmldoc.CreateElement("leader");
+                XmlText text1 = xmldoc.CreateTextNode("younes");
+                root.AppendChild(element1);
+                element1.AppendChild(text1);
+                XmlElement root2 = xmldoc.CreateElement("group_membars");
+                root.AppendChild(root2);
+                XmlElement element3 = xmldoc.CreateElement("membar1");
+                XmlText text3 = xmldoc.CreateTextNode("Raneen");
+                root2.AppendChild(element3);
+                element3.AppendChild(text3);
+                XmlElement element4 = xmldoc.CreateElement("membar2");
+                XmlText text4 = xmldoc.CreateTextNode("Mohammad");
+                root2.AppendChild(element4);
+                element4.AppendChild(text4);
+                XmlElement element5 = xmldoc.CreateElement("membar3");
+                XmlText text5 = xmldoc.CreateTextNode("Amal");
+                root2.AppendChild(element5);
+                element5.AppendChild(text5);
+                XmlElement element6 = xmldoc.CreateElement("membar4");
+                XmlText text6 = xmldoc.CreateTextNode("Hussain");
+                root2.AppendChild(element6);
+                element6.AppendChild(text6);
+                xmldoc.Save(@"C:\Users\96655\OneDrive\Desktop\file.xml");
+                Console.WriteLine("Successfully, generated team.xml.\n");
+
+            }
         }
         static void ReadXMLfile()
         {
